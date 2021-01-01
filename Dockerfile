@@ -1,9 +1,7 @@
 FROM python:3
 
-WORKDIR /task-manager/
+COPY task_manager.py index.html /task-manager/
 
-COPY . .
+WORKDIR /task-manager
 
-CMD ["mypython.py"]
-
-ENTRYPOINT ["python3"]
+CMD ["python","task_manager.py"]
