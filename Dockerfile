@@ -1,7 +1,9 @@
-FROM python:3.8.7-slim
+FROM python:3
 
-COPY index.html /task-manager/
+WORKDIR /task-manager/
 
-EXPOSE 8080
+COPY . .
 
-CMD ["python", "-m", "http.server", "-d", "/task-manager", "8080"]
+CMD ["mypython.py"]
+
+ENTRYPOINT ["python3"]
